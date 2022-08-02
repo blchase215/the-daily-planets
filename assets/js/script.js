@@ -3,7 +3,12 @@ var searchHeadEl = document.querySelectorAll('#search-head');
 var inputCardEl = document.querySelectorAll('#input-card');
 var bottomEl = document.querySelectorAll('#bottom');
 var resultsEl = document.querySelectorAll('#results');
-
+var imagesEl = document.getElementById('.images');
+var image1El = document.getElementById('.image1');
+var image2El = document.getElementById('.image2');
+var image3El = document.getElementById('.image3');
+var image4El = document.getElementById('.image4');
+var newsEl = document.getElementById('.news');
 
 
 
