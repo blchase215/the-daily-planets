@@ -17,23 +17,15 @@ var image2El = $('image2');
 var image3El = $('image3');
 var image4El = $('image4');
 var newsEl = $('news');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$( document ).ready(function() {
+    $("#date-input").datepicker({ 
+        format: 'yyyy-mm-dd'
+    });
+    $("#date-input").on("change", function () {
+        var fromdate = $(this).val();
+        alert(fromdate);
+    });
+}); 
 
 
 
