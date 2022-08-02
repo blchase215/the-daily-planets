@@ -17,7 +17,15 @@ var image2El = $('image2');
 var image3El = $('image3');
 var image4El = $('image4');
 var newsEl = $('news');
-
+$( document ).ready(function() {
+    $("#date-input").datepicker({ 
+        format: 'yyyy-mm-dd'
+    });
+    $("#date-input").on("change", function () {
+        var fromdate = $(this).val();
+        alert(fromdate);
+    });
+}); 
 
 
 
@@ -112,7 +120,7 @@ var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + news
 var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
 var marsQueryString = 'https://api.nasa.gov/planetary/apod?api_key=' + marsApiKey;
 
-console.log(newsQueryString);
+// console.log(newsQueryString);
 console.log(marsQueryString);
 
 
