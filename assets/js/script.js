@@ -196,10 +196,25 @@ var newsEl = document.getElementById('.news');
 
 
 
+//these variables and lines are to be used in functions for the appropriate ajax requests. This is all fired with the submit button event listener
+var rover1 = $('<img id="rover1"/>')
+//add rover1.atr('src', response.the imageurl path)
+var rover2 = $('<img id="rover2"/>')
+//add rover2.atr('src', response.the imageurl path)
+var rover3 = $('<img id="rover3"/>')
+//add rover3.atr('src', response.the imageurl path)
+var rover4 = $('<img id="rover4"/>')
+//add rover4.atr('src', response.the imageurl path)
 
 
+var addTopStory = $('<a id="top-story"')
+//addTopStory.attr('href', response.the storyurl path)
 
-
+image1El.html(rover1);
+image2El.html(rover2);
+image3El.html(rover3);
+image4El.html(rover4);
+newsEl.html(addTopStory);
 
 
 
