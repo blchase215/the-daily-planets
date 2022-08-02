@@ -5,52 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-    <title>Document</title>
+    <title>Daily Planets</title>
 </head>
 <body>
      <main>
 
         <!-- Search Form, top of the page -->
         <!-- Should we have a query for desktop where these sections are to the left and right of eachother for better UE? -->
-         <section>
+        <section class="top">
             <!-- container for the heading of the form and the form -->
-            <div>
+            <div class="search-card">
                 <!-- Header and instructions for userinput form -->
-                <div>
-                    <header>
-                        <h1 class="title">Daily Planets</h1>
-                        <p>Select a date and category to see what was going on on earth and mars at that date!</p>
-                    </header>
+                <div class="search-head">
+                    <h1 class="title">Daily Planets</h1>
+                    <p>Select a date and category to see what was going on on earth and mars at that date!</p>
                 </div>
                 <!-- userinput form -->
-                <div>
+                <div class="input-card">
                     <form action="">
                         <!-- <label for=""></label>
                         <input type="text"> -->
                         <label for=""></label>
-                        <input type="date">
+                        <input type="date" id="date-input">
                     </form>
-                    <button class="button is-primary"> Submit </button>
+                    <button class="button is-primary" id="submit-btn"> Submit </button>
                 </div>
             </div>
         </section>
         <!-- Results, bottom of the page -->
         <!-- Should we have a query for desktop where these sections are to the left and right of eachother for better UE? -->
-        <section>
+        <section class="bottom">
             <!-- container for images and news stories -->
-            <div>
+            <div class="results">
                 <!-- Container for image/images and possibly information about the image -->
-                <div>
+                <div id="images">
                     <h2>What Was Mars Like?</h2>
                     <!-- Up to four images filled from mars API depending on which rover has pictures for that day -->
-                    <figure></figure>
-                    <figure></figure>
-                    <figure></figure>
-                    <figure></figure>
+                    <figure id="image1"></figure>
+                    <figure id="image2"></figure>
+                    <figure id="image3"></figure>
+                    <figure id="image4"></figure>
 
                 </div>
                 <!-- Container for news story/stories -->
-                <div>
+                <div id="news">
                  <h2>What was Earth Like?</h2>
                 </div>
             </div>
