@@ -1,14 +1,22 @@
+// changed to jQuery
+
+// var imagesEl = document.getElementById('images');
+// var image1El = document.getElementById('image1');
+// var image2El = document.getElementById('image2');
+// var image3El = document.getElementById('image3');
+// var image4El = document.getElementById('image4');
+// var newsEl = document.getElementById('news');
 var searchCardEl = document.querySelectorAll('#search-card');
 var searchHeadEl = document.querySelectorAll('#search-head');
 var inputCardEl = document.querySelectorAll('#input-card');
 var bottomEl = document.querySelectorAll('#bottom');
 var resultsEl = document.querySelectorAll('#results');
-var imagesEl = document.getElementById('.images');
-var image1El = document.getElementById('.image1');
-var image2El = document.getElementById('.image2');
-var image3El = document.getElementById('.image3');
-var image4El = document.getElementById('.image4');
-var newsEl = document.getElementById('.news');
+var imagesEl = $('images');
+var image1El = $('image1');
+var image2El = $('image2');
+var image3El = $('image3');
+var image4El = $('image4');
+var newsEl = $('news');
 
 
 
@@ -98,16 +106,14 @@ var newsEl = document.getElementById('.news');
 
 
 
+// Brian Start
+var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
+var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + newsApiKey;
+var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
+var marsQueryString = 'https://api.nasa.gov/planetary/apod?api_key=' + marsApiKey;
 
-
-
-
-
-
-
-
-
-
+console.log(newsQueryString);
+console.log(marsQueryString);
 
 
 
@@ -207,7 +213,7 @@ var rover4 = $('<img id="rover4"/>')
 //add rover4.atr('src', response.the imageurl path)
 
 
-var addTopStory = $('<a id="top-story"')
+var addTopStory = $('<a id="top-story">')
 //addTopStory.attr('href', response.the storyurl path)
 
 image1El.html(rover1);
