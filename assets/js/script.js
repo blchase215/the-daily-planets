@@ -104,11 +104,8 @@ var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + news
 var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
 var marsQueryString = 'https://api.nasa.gov/planetary/apod?api_key=' + marsApiKey;
 
-
-
-
-
-
+console.log(newsQueryString);
+console.log(marsQueryString);
 
 
 
