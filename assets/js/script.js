@@ -98,9 +98,11 @@ var newsEl = document.getElementById('.news');
 
 
 
-
-
-
+// Brian Start
+var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
+var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + newsApiKey;
+var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
+var marsQueryString = 'https://api.nasa.gov/planetary/apod?api_key=' + marsApiKey;
 
 
 
