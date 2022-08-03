@@ -17,15 +17,25 @@ var image2El = $('image2');
 var image3El = $('image3');
 var image4El = $('image4');
 var newsEl = $('news');
-$( document ).ready(function() {
-    $("#date-input").datepicker({ 
-        format: 'yyyy-mm-dd'
-    });
-    $("#date-input").on("change", function () {
-        var fromdate = $(this).val();
-        alert(fromdate);
-    });
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -172,6 +182,20 @@ var rover4 = $('<img id="rover4"/>')
 
 var addTopStory = $('<a id="top-story">')
 //addTopStory.attr('href', response.the storyurl path)
+var dateInput = $("#date-input");
+
+$( document ).ready(function() {
+    dateInput.datepicker({ 
+        format: 'yyyy-mm-dd'
+    });
+    dateInput.on("change", function () {
+        var fromdate = $(this).val();
+        alert(fromdate);
+    });
+}); 
+
+// $("#date-input").datepicker( "option", "dateFormat", 'yy-mm-dd' );
+
 
 image1El.html(rover1);
 image2El.html(rover2);
