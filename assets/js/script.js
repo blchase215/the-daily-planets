@@ -179,10 +179,7 @@ var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
 var userForm = $('#user-form');
 // //these variables and lines are to be used in functions for the appropriate ajax requests. This is all fired with the submit button event listener
 
-newsEl.html(addTopStory);
 
-
-var addTopStory = $('<a id="top-story">')
 //addTopStory.attr('href', response.the storyurl path)
 var dateInput = $("#date-input");
 
@@ -192,35 +189,46 @@ var runAPIs = function(event) {
     //the date parameter for both ajax requests
     userDate = dateInput.val();
     var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
-    var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + newsApiKey;
+    var newsQueryString = "https://api.thenewsapi.com/v1/news/top?api_token=" + newsApiKey + "&published_on="  + userDate + "&locale=us";
     var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
     var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key=' + marsApiKey;
     var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate;
 
    console.log(marsDateString);
     //using AJAX and jquery to make this less painful
+    //mars API request
     $.ajax({
         url: marsDateString,
         method: 'GET',
       }).then(function (response) {
         console.log(response);
         //add element creation station here
-        var rover1 = $('<img src=' + response.photos[0].img_src + ' id="rover1"/>')
+        var rover1 = $('<img src=' + response.photos[0].img_src + ' id="rover1"/>');
         console.log(response.photos[0].img_src);
         console.log(rover1);
         image1El.html(rover1);
         // $('#rover1').attr('src', response.photos[0].img_src)
-        var rover2 = $('<img id="rover2"/>')
+        // var rover2 = $('<img id="rover2"/>')
         //add rover2.atr('src', response.the imageurl path)
-        var rover3 = $('<img id="rover3"/>')
+        // var rover3 = $('<img id="rover3"/>')
         //add rover3.atr('src', response.the imageurl path)
-        var rover4 = $('<img id="rover4"/>')
+        // var rover4 = $('<img id="rover4"/>')
         //add rover4.atr('src', response.the imageurl path)
         // image1El.html(rover1);
         // image2El.html(rover2);
         // image3El.html(rover3);
         // image4El.html(rover4);
       });
+
+    //news API request
+    $.ajax({
+       url: newsQueryString,
+       method: 'GET',
+    }).then(function (response) {
+    console.log(response);
+    var addTopStory = $('<a href=' + response.data[0].url + 'id="top-story">').text(response.data[0].title);
+    newsEl.html(addTopStory);
+    });
       $(".bottom").removeClass("is-hidden")
       $(".top").addClass("is-one-quarter-desktop")
 };  
