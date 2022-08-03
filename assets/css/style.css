@@ -1,33 +1,18 @@
 /* @import "../node_modules/bulma/css/bulma.css"; */
 
-.h1 {
-    font-family: 'Mouse Memoirs', sans-serif;
-    color: black;
+/* html, body {
     margin:0;
     padding:0;
 
+}
+.body {
+    font-size: medium;
+    font-weight:600;
+    line-height: 1.5;
+}
+.h1 {
 
 }
-.p {
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (max-width:768px) {
-    /* For Mobile View */
-    [class*="col-"]
-}
+.h2 {
+    margin: revert;
+} */
