@@ -112,54 +112,19 @@ var newsEl = $('news');
 var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
 var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + newsApiKey;
 var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
-var marsQueryString = 'https://api.nasa.gov/planetary/apod?api_key=' + marsApiKey;
+var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key=' + marsApiKey;
+var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate; // 
 
 // console.log(newsQueryString);
 console.log(marsQueryString);
+console.log(marsDateString);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// builds search query from date provided
+// currently just curiosity
+// date needs to be a string, with format "yyyy-m-d" (no 0 before single digits)
+function marsQuery(date) {
+    marsQueryString
+}
 
 
 
