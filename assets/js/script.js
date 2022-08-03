@@ -192,9 +192,9 @@ var runAPIs = function(event) {
         console.log(response);
         //add element creation station here
         var rover1 = $('<img src=' + response.photos[0].img_src + ' id="rover1"/>')
-        console.log(response.photos[0].img_src)
-        console.log(rover1)
-        image1El.append(rover1);
+        console.log(response.photos[0].img_src);
+        console.log(rover1);
+        image1El.html(rover1);
         // $('#rover1').attr('src', response.photos[0].img_src)
         var rover2 = $('<img id="rover2"/>')
         //add rover2.atr('src', response.the imageurl path)
@@ -298,10 +298,10 @@ $( document ).ready(function() {
     dateInput.datepicker({ 
         dateFormat: 'yy-mm-dd'
     });
-    dateInput.on("change", function () {
-        var fromdate = $(this).val();
-        alert(fromdate);
-    });
+    // dateInput.on("change", function () {
+    //     var fromdate = $(this).val();
+    //     alert(fromdate);
+    // });
 }); 
 
 // $("#date-input").datepicker( "option", "dateFormat", 'yy-mm-dd' );
