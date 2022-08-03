@@ -116,41 +116,39 @@ var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
 var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
 // var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key=' + marsApiKey;
 
-function marsQueryString(userDate, api) {
-    var camera = "fhaz";
-    var rover = "curiosity"
-    var marsQuery = "https://api.nasa.gov/mars-photos/api/v1/rovers/"
-    + rover
-    + "/photos?"
-    //begin query
-    + "camera=" 
-    + camera
-    + "&earth_date=" 
-    + userDate 
-    + "&api_key="       
-    + api
-    ;
-    console.log(marsQuery)
-    return marsQuery;
-}
+// function marsQueryString(userDate) {
+//     var camera = "fhaz";
+//     var rover = "curiosity"
+//     var marsQuery = "https://api.nasa.gov/mars-photos/api/v1/rovers/"
+//     + rover
+//     + "/photos?"
+//     + "camera=" 
+//     + camera
+//     + "&earth_date=" 
+//     + userDate 
+//     + "&api_key="       
+//     + api
+//     ;
+//     return marsQuery;
+// }
 
-console.log(marsQueryString("2022-05-10", marsApiKey));
+// console.log(marsQueryString("2022-05-10", marsApiKey));
 
-function newsQueryString(userDate) {
-    var categories = "general,sports";
-    var newsQuery = "https://api.thenewsapi.com/v1/news/top?api_token=" 
-    + newsApiKey 
-    + "&categories"
-    + categories
-    + "&published_on=" // Y-M-D format
-    + userDate; 
-    console.log(newsQuery)
-    return newsQuery;
-}
+// function newsQueryString(userDate) {
+//     var categories = "general,sports";
+//     var newsQuery = "https://api.thenewsapi.com/v1/news/top?api_token=" 
+//     + newsApiKey 
+//     + "&categories"
+//     + categories
+//     + "&published_on=" // Y-M-D format
+//     + userDate
+//     + "&locale=us"
+//     ; 
+//     return newsQuery;
+// }
 
+// console.log(newsQueryString("2022-05-10", newsApiKey));
 
-
-// "https://api.thenewsapi.com/v1/news/top?api_token=" + newsApiKey + "&published_on=" userDate + "&locale=us";
 
 
 
