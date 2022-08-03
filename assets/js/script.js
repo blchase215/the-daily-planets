@@ -11,12 +11,12 @@ var searchHeadEl = $('<class = search-head/>')
 var inputCardEl = $('<class = input-card/>')
 var bottomEl = $('<class = bottom/>')
 var resultsEl = $('<class = results/>')
-var imagesEl = $('images');
-var image1El = $('image1');
-var image2El = $('image2');
-var image3El = $('image3');
-var image4El = $('image4');
-var newsEl = $('news');
+var imagesEl = $('#images');
+var image1El = $('#image1');
+var image2El = $('#image2');
+var image3El = $('#image3');
+var image4El = $('#image4');
+var newsEl = $('#news');
 
 
 
@@ -164,15 +164,9 @@ function marsQuery(date) {
 
 // sean start
 var userForm = $('#user-form');
-//these variables and lines are to be used in functions for the appropriate ajax requests. This is all fired with the submit button event listener
-var rover1 = $('<img id="rover1"/>')
-//add rover1.atr('src', response.the imageurl path)
-var rover2 = $('<img id="rover2"/>')
-//add rover2.atr('src', response.the imageurl path)
-var rover3 = $('<img id="rover3"/>')
-//add rover3.atr('src', response.the imageurl path)
-var rover4 = $('<img id="rover4"/>')
-//add rover4.atr('src', response.the imageurl path)
+// //these variables and lines are to be used in functions for the appropriate ajax requests. This is all fired with the submit button event listener
+
+newsEl.html(addTopStory);
 
 
 var addTopStory = $('<a id="top-story">')
@@ -197,7 +191,21 @@ var runAPIs = function(event) {
       }).then(function (response) {
         console.log(response);
         //add element creation station here
-
+        var rover1 = $('<img src=' + response.photos[0].img_src + ' id="rover1"/>')
+        console.log(response.photos[0].img_src)
+        console.log(rover1)
+        image1El.append(rover1);
+        // $('#rover1').attr('src', response.photos[0].img_src)
+        var rover2 = $('<img id="rover2"/>')
+        //add rover2.atr('src', response.the imageurl path)
+        var rover3 = $('<img id="rover3"/>')
+        //add rover3.atr('src', response.the imageurl path)
+        var rover4 = $('<img id="rover4"/>')
+        //add rover4.atr('src', response.the imageurl path)
+        // image1El.html(rover1);
+        // image2El.html(rover2);
+        // image3El.html(rover3);
+        // image4El.html(rover4);
       });
 };  
 
@@ -299,11 +307,6 @@ $( document ).ready(function() {
 // $("#date-input").datepicker( "option", "dateFormat", 'yy-mm-dd' );
 
 
-image1El.html(rover1);
-image2El.html(rover2);
-image3El.html(rover3);
-image4El.html(rover4);
-newsEl.html(addTopStory);
 
 
 
