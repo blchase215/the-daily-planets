@@ -6,11 +6,11 @@
 // var image3El = document.getElementById('image3');
 // var image4El = document.getElementById('image4');
 // var newsEl = document.getElementById('news');
-var searchCardEl = document.querySelectorAll('#search-card');
-var searchHeadEl = document.querySelectorAll('#search-head');
-var inputCardEl = document.querySelectorAll('#input-card');
-var bottomEl = document.querySelectorAll('#bottom');
-var resultsEl = document.querySelectorAll('#results');
+var searchCardEl = $('<class = search-card/>')
+var searchHeadEl = $('<class = search-head/>')
+var inputCardEl = $('<class = input-card/>')
+var bottomEl = $('<class = bottom/>')
+var resultsEl = $('<class = results/>')
 var imagesEl = $('images');
 var image1El = $('image1');
 var image2El = $('image2');
@@ -112,54 +112,19 @@ var newsEl = $('news');
 var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
 var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + newsApiKey;
 var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
-var marsQueryString = 'https://api.nasa.gov/planetary/apod?api_key=' + marsApiKey;
+var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key=' + marsApiKey;
+var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate; // 
 
 // console.log(newsQueryString);
 console.log(marsQueryString);
+console.log(marsDateString);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// builds search query from date provided
+// currently just curiosity
+// date needs to be a string, with format "yyyy-m-d" (no 0 before single digits)
+function marsQuery(date) {
+    marsQueryString
+}
 
 
 
