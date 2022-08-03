@@ -1,1 +1,33 @@
 /* @import "../node_modules/bulma/css/bulma.css"; */
+
+.h1 {
+    font-family: 'Mouse Memoirs', sans-serif;
+    color: black;
+    margin:0;
+    padding:0;
+
+
+}
+.p {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:768px) {
+    /* For Mobile View */
+    [class*="col-"]
+}
