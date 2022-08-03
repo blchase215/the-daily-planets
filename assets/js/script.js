@@ -6,11 +6,11 @@
 // var image3El = document.getElementById('image3');
 // var image4El = document.getElementById('image4');
 // var newsEl = document.getElementById('news');
-var searchCardEl = document.querySelectorAll('#search-card');
-var searchHeadEl = document.querySelectorAll('#search-head');
-var inputCardEl = document.querySelectorAll('#input-card');
-var bottomEl = document.querySelectorAll('#bottom');
-var resultsEl = document.querySelectorAll('#results');
+var searchCardEl = $('<class = search-card/>')
+var searchHeadEl = $('<class = search-head/>')
+var inputCardEl = $('<class = input-card/>')
+var bottomEl = $('<class = bottom/>')
+var resultsEl = $('<class = results/>')
 var imagesEl = $('images');
 var image1El = $('image1');
 var image2El = $('image2');
