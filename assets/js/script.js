@@ -197,12 +197,7 @@ console.log(marsQueryString);
 
 
 
-
-
-
-
-
-
+// sean start
 
 //these variables and lines are to be used in functions for the appropriate ajax requests. This is all fired with the submit button event listener
 var rover1 = $('<img id="rover1"/>')
@@ -219,9 +214,109 @@ var addTopStory = $('<a id="top-story">')
 //addTopStory.attr('href', response.the storyurl path)
 var dateInput = $("#date-input");
 
+var runAPIs = function(event) {
+    event.preventDefault();
+    //the date parameter for both ajax requests
+    date = dateInput.val();
+   console.log(marsQueryString);
+    //using AJAX and jquery to make this less painful
+    $.ajax({
+        url: marsQueryString,
+        method: 'GET',
+      }).then(function (response) {
+        console.log(response);
+        //add element creation station here
+
+      });
+};  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $( document ).ready(function() {
     dateInput.datepicker({ 
-        format: 'yyyy-mm-dd'
+        dateFormat: 'yy-mm-dd'
     });
     dateInput.on("change", function () {
         var fromdate = $(this).val();
