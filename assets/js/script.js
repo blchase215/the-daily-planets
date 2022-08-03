@@ -110,32 +110,47 @@ var newsEl = $('news');
 
 // Brian Start
 var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
-var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + newsApiKey;
+// var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + newsApiKey;
+
+
 var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
-var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key=' + marsApiKey;
-var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate; // 
+// var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key=' + marsApiKey;
 
-// console.log(newsQueryString);
-console.log(marsQueryString);
-console.log(marsDateString);
+function marsQueryString(userDate, api) {
+    var camera = "fhaz";
+    var rover = "curiosity"
+    var marsQuery = "https://api.nasa.gov/mars-photos/api/v1/rovers/"
+    + rover
+    + "/photos?"
+    //begin query
+    + "camera=" 
+    + camera
+    + "&earth_date=" 
+    + userDate 
+    + "&api_key="       
+    + api
+    ;
+    console.log(marsQuery)
+    return marsQuery;
+}
 
-// builds search query from date provided
-// currently just curiosity
-// date needs to be a string, with format "yyyy-m-d" (no 0 before single digits)
-function marsQuery(date) {
-    marsQueryString
+console.log(marsQueryString("2022-05-10", marsApiKey));
+
+function newsQueryString(userDate) {
+    var categories = "general,sports";
+    var newsQuery = "https://api.thenewsapi.com/v1/news/top?api_token=" 
+    + newsApiKey 
+    + "&categories"
+    + categories
+    + "&published_on=" // Y-M-D format
+    + userDate; 
+    console.log(newsQuery)
+    return newsQuery;
 }
 
 
 
-
-
-
-
-
-
-
-
+// "https://api.thenewsapi.com/v1/news/top?api_token=" + newsApiKey + "&published_on=" userDate + "&locale=us";
 
 
 
