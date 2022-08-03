@@ -108,16 +108,16 @@ var newsEl = $('news');
 
 
 
-// Brian Start
-var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
-var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + newsApiKey;
-var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
-var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key=' + marsApiKey;
-var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate; // 
+// // Brian Start
+// var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
+// var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + newsApiKey;
+// var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
+// var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key=' + marsApiKey;
+// var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate; // 
 
-// console.log(newsQueryString);
-console.log(marsQueryString);
-console.log(marsDateString);
+// // console.log(newsQueryString);
+// console.log(marsQueryString);
+// console.log(marsDateString);
 
 // builds search query from date provided
 // currently just curiosity
@@ -162,13 +162,8 @@ function marsQuery(date) {
 
 
 
-
-
-
-
-
-
-
+// sean start
+var userForm = $('#user-form');
 //these variables and lines are to be used in functions for the appropriate ajax requests. This is all fired with the submit button event listener
 var rover1 = $('<img id="rover1"/>')
 //add rover1.atr('src', response.the imageurl path)
@@ -184,9 +179,116 @@ var addTopStory = $('<a id="top-story">')
 //addTopStory.attr('href', response.the storyurl path)
 var dateInput = $("#date-input");
 
+var runAPIs = function(event) {
+    event.preventDefault();
+    //the date parameter for both ajax requests
+    userDate = dateInput.val();
+    var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
+    var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + newsApiKey;
+    var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
+    var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key=' + marsApiKey;
+    var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate;
+
+   console.log(marsDateString);
+    //using AJAX and jquery to make this less painful
+    $.ajax({
+        url: marsDateString,
+        method: 'GET',
+      }).then(function (response) {
+        console.log(response);
+        //add element creation station here
+
+      });
+};  
+
+userForm.on('submit', runAPIs);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $( document ).ready(function() {
     dateInput.datepicker({ 
-        format: 'yyyy-mm-dd'
+        dateFormat: 'yy-mm-dd'
     });
     dateInput.on("change", function () {
         var fromdate = $(this).val();
