@@ -175,6 +175,7 @@ var dateInput = $("#date-input");
 
 var runAPIs = function(event) {
     event.preventDefault();
+
     //the date parameter for both ajax requests
     userDate = dateInput.val();
     var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
@@ -207,7 +208,10 @@ var runAPIs = function(event) {
         // image3El.html(rover3);
         // image4El.html(rover4);
       });
+      $(".bottom").removeClass("is-hidden")
+      $(".top").addClass("is-one-quarter-desktop")
 };  
+
 
 userForm.on('submit', runAPIs);
 
