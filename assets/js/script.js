@@ -1,4 +1,5 @@
 // eric start
+//global DOM variables
 var searchCardEl = $('<class = search-card/>')
 var searchHeadEl = $('<class = search-head/>')
 var inputCardEl = $('<class = input-card/>')
@@ -36,23 +37,23 @@ var headerImageEl = $('#header-image');
 //     + "&locale=us"
 
 // sean start
+//GDVs for runAPIs function
 var userForm = $('#user-form');
-// //these variables and lines are to be used in functions for the appropriate ajax requests. This is all fired with the submit button event listener
-
-
-//addTopStory.attr('href', response.the storyurl path)
 var dateInput = $("#date-input");
-
+//run both apis when submit even is fired
 var runAPIs = function(event) {
     event.preventDefault();
+    //several keys are here in case news api hits paywall
     //sean key: 2mtrY9KLEh3TbTNFIlLfNrY7ETzWC2mGtB2cFz3S
     //brian key: 7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3i
     //the date parameter for both ajax requests
     userDate = dateInput.val();
+    //defining parameters for mars cameras
     var camera = "fhaz";
     var rhaz = "rhaz";
     var navCam = "navcam"
     var camera2 = "mast"
+    //active api keys and urls
     var newsApiKey = '2mtrY9KLEh3TbTNFIlLfNrY7ETzWC2mGtB2cFz3S';
     var newsQueryString = "https://api.thenewsapi.com/v1/news/top?api_token=" + newsApiKey + "&published_on="  + userDate + "&locale=us";
     var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
