@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
     <link rel="Stylesheet" href="./assets/css/reset.css">
     <link rel="Stylesheet" href="./assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Mouse+Memoirs&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Megrim&family=Mouse+Memoirs&display=swap" rel="stylesheet">
     <title>Daily Planets</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
                 <!-- Header and instructions for userinput form -->
                 <div class="search-head has-text-centered">
                     <h1 class="title">Daily Planets</h1>
-                    <p>Select a date and category to see what was going on on earth and mars at that date!</p>
+                    <p>Select a date to see what was going on on earth and mars at that date!</p>
                 </div>
                 <!-- userinput form -->
                 <div class="input-card has-text-centered p-3">
@@ -30,11 +31,15 @@
                         <!-- <label for=""></label>
                         <input type="text"> -->
 
-                        <input type="text" id="date-input" placeholder="Choose a date in the past">
+                        <input type="text" id="date-input" placeholder="Earliest Date: 8/5/2012">
                         <button class="button is-primary is-rounded" id="submit-btn"> Submit </button>
                     </form>
                    
                 </div>
+            </div>
+
+            <div id="dropdown-disclaimer">
+            <p id="disclaimer">Sometimes, Earth can be a depressing planet. It seems today that most news is bad news, or even just news we don't really want to hear about. We here at the Daily Planets are not advocates of distraction from current or past events. However, we find it unwise to let the bleak nature of this world consume you. Instead, why not go a third way? If life on this planet seems depressing, why not supplement the days headlines with imagery from a less terrible, more liveable nearby planet? Introducing the Daily Planets, Earths first multi-planetary independent media source. (Possibly. We lack enough evidence to confidently claim this title, sadly. We need more funding for that.)</p>
             </div>
         </section>
         <!-- Results, bottom of the page -->
@@ -42,8 +47,13 @@
         <section class="bottom column is-hidden">
             <!-- container for images and news stories -->
             <div class="results p-5">
-                <!-- Container for image/images and possibly information about the image -->
-                <div id="images">
+                <!-- Container for news story/stories -->
+                <div>
+                 <h2>What was Earth Like?</h2>
+                 <div id="news"></div>
+                </div>
+                 <!-- Container for image/images and possibly information about the image -->
+                 <div id="images">
                     <h2>What Was Mars Like?</h2>
                     <!-- Up to four images filled from mars API depending on which rover has pictures for that day -->
                     <figure id="image1"></figure>
