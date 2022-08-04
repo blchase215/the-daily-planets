@@ -1,11 +1,4 @@
-// changed to jQuery
-
-// var imagesEl = document.getElementById('images');
-// var image1El = document.getElementById('image1');
-// var image2El = document.getElementById('image2');
-// var image3El = document.getElementById('image3');
-// var image4El = document.getElementById('image4');
-// var newsEl = document.getElementById('news');
+// eric start
 var searchCardEl = $('<class = search-card/>')
 var searchHeadEl = $('<class = search-head/>')
 var inputCardEl = $('<class = input-card/>')
@@ -19,105 +12,8 @@ var image4El = $('#image4');
 var newsEl = $('#news');
 var headerImageEl = $('#header-image');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Brian Start
-var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
-// var newsQueryString = 'https://api.thenewsapi.com/v1/news/top?api_token=' + newsApiKey;
-
-
-var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
-var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key=' + marsApiKey;
-
-// function marsQueryString(userDate) {
+//marsapiparameters
 //     var camera = "fhaz";
 //     var rover = "curiosity"
 //     var marsQuery = "https://api.nasa.gov/mars-photos/api/v1/rovers/"
@@ -129,13 +25,7 @@ var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity
 //     + userDate 
 //     + "&api_key="       
 //     + api
-//     ;
-//     return marsQuery;
-// }
-
-// console.log(marsQueryString("2022-05-10", marsApiKey));
-
-// function newsQueryString(userDate) {
+//newsapiparameters
 //     var categories = "general,sports";
 //     var newsQuery = "https://api.thenewsapi.com/v1/news/top?api_token=" 
 //     + newsApiKey 
@@ -144,37 +34,6 @@ var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity
 //     + "&published_on=" // Y-M-D format
 //     + userDate
 //     + "&locale=us"
-//     ; 
-//     return newsQuery;
-// }
-
-// console.log(newsQueryString("2022-05-10", newsApiKey));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // sean start
 var userForm = $('#user-form');
@@ -197,7 +56,6 @@ var runAPIs = function(event) {
     var newsApiKey = '2mtrY9KLEh3TbTNFIlLfNrY7ETzWC2mGtB2cFz3S';
     var newsQueryString = "https://api.thenewsapi.com/v1/news/top?api_token=" + newsApiKey + "&published_on="  + userDate + "&locale=us";
     var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
-    var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key=' + marsApiKey;
     var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate + "&camera=" + camera + "&camera=" + rhaz + "&camera=" + navCam + "&camera=" + camera2;
    console.log(marsDateString);
     //using AJAX and jquery to make this less painful
@@ -207,12 +65,6 @@ var runAPIs = function(event) {
         method: 'GET',
       }).then(function (response) {
         console.log(response);
-        //add element creation station here
-        // var rover1 = $('<img src=' + response.photos[0].img_src + ' id="rover1"/>');
-        // var rover2 = $('<img src=' + response.photos[1].img_src + ' id="rover2"/>');
-        // var rover3 = $('<img src=' + response.photos[2].img_src + ' id="rover3"/>');
-        // var rover4 = $('<img src=' + response.photos[3].img_src + ' id="rover4"/>');
-        console.log(response.photos[0].img_src);
         image1El.html('');
         image2El.html('');
         image3El.html('');
@@ -225,17 +77,6 @@ var runAPIs = function(event) {
         };
          if (response.photos[3].img_src){image4El.html($('<img src=' + response.photos[3].img_src + ' id="rover4"/>'));
         };
-        // $('#rover1').attr('src', response.photos[0].img_src)
-        // var rover2 = $('<img id="rover2"/>')
-        //add rover2.atr('src', response.the imageurl path)
-        // var rover3 = $('<img id="rover3"/>')
-        //add rover3.atr('src', response.the imageurl path)
-        // var rover4 = $('<img id="rover4"/>')
-        //add rover4.atr('src', response.the imageurl path)
-        // image1El.html(rover1);
-        // image2El.html(rover2);
-        // image3El.html(rover3);
-        // image4El.html(rover4);
       });
 
     //news API request
@@ -264,43 +105,7 @@ var runAPIs = function(event) {
       };
 };  
 
-
 userForm.on('submit', runAPIs);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 $( document ).ready(function() {
@@ -315,310 +120,3 @@ $( document ).ready(function() {
     //     alert(fromdate);
     // });
 }); 
-
-// $("#date-input").datepicker( "option", "dateFormat", 'yy-mm-dd' );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//YO
