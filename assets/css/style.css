@@ -42,11 +42,21 @@ margin-right: 50px;
     padding: 4rem;
     margin: 0;
 } */
+.ui-datepicker span{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    background-color: #a5beab;
+    border-radius: 2%;
+}
+
+.ui-datepicker select.ui-datepicker-year {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #a5beab;
+}
 /* 
 @media screen and (max-width: 992px) {
    
 
 }
-@media only screen and (max-width: 600px) { */
-
-    
