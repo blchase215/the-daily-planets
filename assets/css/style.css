@@ -32,6 +32,7 @@
     font-style: oblique;
     font-weight: bold;
   }
+
   /* placeholder text inside of search box - color, font and weight */
   ::placeholder {
     color:#441C04 ;
