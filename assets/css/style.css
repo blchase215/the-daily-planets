@@ -12,9 +12,13 @@
     color: white;
     font-size: 24px;
   }
+  html {
+    background-color:#AE3D0D;
+  }
   /* Background color palette */
   body {
-    background-color:#AE3D0D;
+   
+    min-height: 100vh;
   }
   /* header 1&2 font styles, colors, weight and size */
   h1 {
