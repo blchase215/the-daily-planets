@@ -31,9 +31,10 @@
   /* placeholder text inside of search box - color, font and weight */
   ::placeholder {
     color:#441C04 ;
-    font-family: 'Megrim', cursive;
+    font-family: 'Times New Roman', Times, serif;
     text-shadow: #B66310;
     font-weight: bolder;
+    font-size:medium;
   }
   /* button shadow. no purpose besides being aesthetically pleasing */
   .button {
@@ -49,7 +50,6 @@
     border: 3px solid;
     font-size: larger;
   } */
-
   
 /* @media screen and (max-width: 992px) {
    
@@ -60,38 +60,3 @@
 
 
     
-
-  /* p {
-    font-size: larger;
-    color: #0F1816;
-    font-size: 21px;
-  } */
-  /* h1, h2{
-border: 3px solid;
-font-size: 25px;
-color: #0F1816;
-margin-right: 50px;
-  } */
-/* div {
-    padding: 4rem;
-    margin: 0;
-} */
-.ui-datepicker span{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.ui-datepicker .ui-datepicker-header {
-    background-color: #a5beab;
-    border-radius: 2%;
-}
-
-.ui-datepicker select.ui-datepicker-year {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #a5beab;
-}
-/* 
-@media screen and (max-width: 992px) {
-   
-
-}
-
