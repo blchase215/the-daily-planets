@@ -186,6 +186,11 @@ var dateInput = $("#date-input");
 
 var runAPIs = function(event) {
     event.preventDefault();
+    newsEl.html('');
+    image1El.html('');
+    image2El.html('');
+    image3El.html('');
+    image4El.html('');
     //sean key: 2mtrY9KLEh3TbTNFIlLfNrY7ETzWC2mGtB2cFz3S
     //brian key: 7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3i
     //the date parameter for both ajax requests
@@ -213,10 +218,7 @@ var runAPIs = function(event) {
         // var rover3 = $('<img src=' + response.photos[2].img_src + ' id="rover3"/>');
         // var rover4 = $('<img src=' + response.photos[3].img_src + ' id="rover4"/>');
         console.log(response.photos[0].img_src);
-        image1El.html('');
-        image2El.html('');
-        image3El.html('');
-        image4El.html('');
+
          if (response.photos[0].img_src){image1El.html($('<img src=' + response.photos[0].img_src + ' id="rover1"/>'));
         };
          if (response.photos[1].img_src){image2El.html($('<img src=' + response.photos[1].img_src + ' id="rover2"/>'));
@@ -244,6 +246,10 @@ var runAPIs = function(event) {
        method: 'GET',
     }).then(function (response) {
     console.log(response);
+    if(response.data.length === 0){
+      newsEl.append('<h3> No data for that date was found </h3>')
+      return;
+    }
     var addTopStory = $('<a href=' + response.data[0].url + 'id="top-story">').text(response.data[0].title);
     newsEl.html(addTopStory);
     var headerImage = $('<img src=' + response.data[0].image_url + ' id="headerImage"/>');
