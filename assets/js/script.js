@@ -43,9 +43,15 @@ var dateInput = $("#date-input");
 //run both apis when submit even is fired
 var runAPIs = function(event) {
     event.preventDefault();
-    //several keys are here in case news api hits paywall
+    newsEl.html('');
+    image1El.html('');
+    image2El.html('');
+    image3El.html('');
+    image4El.html('');
     //sean key: 2mtrY9KLEh3TbTNFIlLfNrY7ETzWC2mGtB2cFz3S
     //brian key: 7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3i
+    // Chase key newsapi.org: 77ded382149945d0aabeabaa30a76f24 
+    // Chase key TheNewApi: XK5702MK41VUJtmCMj8Qbs77KCyEaR4BWAoGYZd3
     //the date parameter for both ajax requests
     userDate = dateInput.val();
     //defining parameters for mars cameras
@@ -54,7 +60,7 @@ var runAPIs = function(event) {
     var navCam = "navcam"
     var camera2 = "mast"
     //active api keys and urls
-    var newsApiKey = '2mtrY9KLEh3TbTNFIlLfNrY7ETzWC2mGtB2cFz3S';
+    var newsApiKey = 'XK5702MK41VUJtmCMj8Qbs77KCyEaR4BWAoGYZd3';
     var newsQueryString = "https://api.thenewsapi.com/v1/news/top?api_token=" + newsApiKey + "&published_on="  + userDate + "&locale=us";
     var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
     var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate + "&camera=" + camera + "&camera=" + rhaz + "&camera=" + navCam + "&camera=" + camera2;
@@ -87,6 +93,10 @@ var runAPIs = function(event) {
        method: 'GET',
     }).then(function (response) {
     console.log(response);
+    if(response.data.length === 0){
+      newsEl.append('<h3> No data for that date was found </h3>')
+      return;
+    }
     var addTopStory = $('<a href=' + response.data[0].url + 'id="top-story">').text(response.data[0].title);
     newsEl.html(addTopStory);
     var headerImage = $('<img src=' + response.data[0].image_url + ' id="headerImage"/>');
@@ -117,6 +127,13 @@ $( document ).ready(function() {
         maxDate: "Today",
         changeYear: true,
     });
+
+    if (localStorage.getItem('lastDate')) {
+      dateInput.val(localStorage.getItem('lastDate'));
+      console.log(localStorage.getItem('lastDate'));
+     } else {console.log('no good!')};
+
+
     // dateInput.on("change", function () {
     //     var fromdate = $(this).val();
     //     alert(fromdate);
