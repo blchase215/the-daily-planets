@@ -17,7 +17,6 @@
   }
   /* Background color palette */
   body {
-   
     min-height: 100vh;
   }
   /* header 1&2 font styles, colors, weight and size */
@@ -74,8 +73,43 @@
   }
   /* button shadow. no purpose besides being aesthetically pleasing */
   .button {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0;
+    /* box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0; */
+    font-size: var(--font-size);
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border: var(--clr-button)0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+    text-shadow: 
+    0 0 .20em; color:gold,
+    0 0 .30em var(--clr-button);
+    box-shadow:
+    insert- 0 0 .5em var(--clr-button),
+          0 0 .5em var(--clr-button);
   }
+  
+  .cst-btn {
+    background-color: black;
+    font-weight: bold;
+    color: white;
+  }
+
+  /* .button::before{
+    content: "";
+    position: absolute;
+    top: 140%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: var(--clr-button);
+    transform: 
+    perspective(0.2em);
+    rotate: (10deg);
+    scale: (1.3, 0.40);
+    filter: blur(0.5em) */
+
+
 
   main {
     flex-wrap: wrap;

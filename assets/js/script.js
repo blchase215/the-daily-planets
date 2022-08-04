@@ -61,6 +61,7 @@ var runAPIs = function(event) {
    console.log(marsDateString);
     //using AJAX and jquery to make this less painful
     //mars API request
+    localStorage.setItem('lastDate', userDate);
     $.ajax({
         url: marsDateString,
         method: 'GET',
