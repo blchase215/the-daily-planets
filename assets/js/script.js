@@ -17,6 +17,7 @@ var image2El = $('#image2');
 var image3El = $('#image3');
 var image4El = $('#image4');
 var newsEl = $('#news');
+var headerImageEl = $('#header-image');
 
 
 
@@ -228,6 +229,14 @@ var runAPIs = function(event) {
     console.log(response);
     var addTopStory = $('<a href=' + response.data[0].url + 'id="top-story">').text(response.data[0].title);
     newsEl.html(addTopStory);
+    var headerImage = $('<img src=' + response.data[0].image_url + ' id="headerImage"/>');
+    if(headerImage) {
+      console.log(response.data[0].image_url)
+      newsEl.append(headerImage)
+    }
+    else{
+      newsEl.append(" There is no header image. The link to the website may be broken ")
+    }
     });
       $(".bottom").removeClass("is-hidden")
       $(".top").addClass("is-one-quarter-desktop")
