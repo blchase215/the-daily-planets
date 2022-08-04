@@ -1,52 +1,61 @@
 /* @import "../node_modules/bulma/css/bulma.css"; */
 
-/* main {
-    /* flex-wrap: wrap-reverse; */
-    /* padding: 4rem;
-    margin: 0rem; */
-
+/* Header color & Font-Type */
 * {
     color: #0F1816;
-    font-family: 'Mouse Memoirs', sans-serif;
+    font-family: 'Major Mono Display', monospace;
   }
+  /* paragraph font-type,size and text color  */
   p {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: larger;
     color: #0F1816;
-    font-size: 21px;
-  /* }
-  body {
-    background-color:#008970;
-
-  } */
-}
-    /* padding: 0px;
-    margin: 0rem; */
-  /* }
+    font-size: 24px;
   }
-  label {
+  /* Background color palette */
+  body {
+    background-color:#AE3D0D;
+  }
+  /* header 1&2 font styles, colors, weight and size */
+  h1 {
+    font-style: oblique;
+  }
+  h2{
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-size: medium; */
+    color: #0F1816;
+    font-size: 20px;
+    font-style: oblique;
+    font-weight: bold;
+  }
+  /* placeholder text inside of search box - color, font and weight */
+  ::placeholder {
+    color:#441C04 ;
+    font-family: 'Megrim', cursive;
+    text-shadow: #B66310;
+    font-weight: bolder;
+  }
+  /* button shadow. no purpose besides being aesthetically pleasing */
+  .button {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0;
+  }
+
+  main {
+    flex-wrap: wrap;
+    padding: 4rem;
+    /* margin: 4rem; */
+  }
+  /* label {
     border: 3px solid;
     font-size: larger;
   } */
-  /* p {
-    font-size: larger;
-    color: #0F1816;
-    font-size: 21px;
-  } */
-  /* h1, h2{
-border: 3px solid;
-font-size: 25px;
-color: #0F1816;
-margin-right: 50px;
-  } */
-/* div {
-    padding: 4rem;
-    margin: 0;
-} */
-/* 
-@media screen and (max-width: 992px) {
+  
+/* @media screen and (max-width: 992px) {
    
 
 }
 @media only screen and (max-width: 600px) { */
+    
+
 
     
