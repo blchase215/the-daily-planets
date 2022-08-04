@@ -2,14 +2,14 @@
 
 /* Header color & Font-Type */
 * {
+    font-family: Arial, Helvetica, sans-serif;
     color: #0F1816;
-    font-family: 'Major Mono Display', monospace;
   }
   /* paragraph font-type,size and text color  */
   p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: larger;
-    color: #0F1816;
+    color: white;
     font-size: 24px;
   }
   /* Background color palette */
@@ -18,16 +18,39 @@
   }
   /* header 1&2 font styles, colors, weight and size */
   h1 {
-    font-style: oblique;
+    font-family: 'Major Mono Display', monospace;
   }
   h2{
     font-family: Arial, Helvetica, sans-serif;
     /* font-size: medium; */
-    color: #0F1816;
-    font-size: 20px;
+    color: white;
+    font-size: 25px;
     font-style: oblique;
-    font-weight: bold;
+    font-weight: bolder;
   }
+
+  #news a{
+    font-size: 20px;
+    color: white;
+    text-decoration: 2px solid white;
+  }
+
+  #news a:hover{
+    text-decoration: underline;
+  }
+
+  
+  
+  #rover1 {
+    height: 100%;
+    width: 500em;
+  }
+
+  #disclaimer {
+    color: white;
+    font-weight: bolder;
+  }
+
   /* placeholder text inside of search box - color, font and weight */
   ::placeholder {
     color:#441C04 ;
