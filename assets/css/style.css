@@ -1,6 +1,14 @@
 /* @import "../node_modules/bulma/css/bulma.css"; */
 
 /* Header color & Font-Type */
+
+:root {
+ --bojack:var#AE3D0D;
+ --ashy:var#0F1816;
+ --greenish:var#a5beab;
+ --golfish:var#B66310;
+}
+
 * {
     font-family: Arial, Helvetica, sans-serif;
     color: #0F1816;
@@ -79,6 +87,14 @@
     font-family: 'Megrim', cursive;
     text-shadow: #B66310;
     font-weight: bolder;
+    color:#0F1816;
+    /* opacity: 5000%; */
+  }
+  
+    
+  :placeholder-shown {
+    border: #AE3D0D;
+
   }
   /* button shadow. no purpose besides being aesthetically pleasing */
   .button {

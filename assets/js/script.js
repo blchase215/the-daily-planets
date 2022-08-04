@@ -193,6 +193,8 @@ var runAPIs = function(event) {
     image4El.html('');
     //sean key: 2mtrY9KLEh3TbTNFIlLfNrY7ETzWC2mGtB2cFz3S
     //brian key: 7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3i
+    // Chase key newsapi.org: 77ded382149945d0aabeabaa30a76f24 
+    // Chase key TheNewApi: XK5702MK41VUJtmCMj8Qbs77KCyEaR4BWAoGYZd3
     //the date parameter for both ajax requests
     userDate = dateInput.val();
     var camera = "fhaz";
