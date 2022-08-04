@@ -17,7 +17,6 @@
   }
   /* Background color palette */
   body {
-   
     min-height: 100vh;
   }
   /* header 1&2 font styles, colors, weight and size */
@@ -75,6 +74,12 @@
   /* button shadow. no purpose besides being aesthetically pleasing */
   .button {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0;
+  }
+  
+  .cst-btn {
+    background-color: black;
+    font-weight: bold;
+    color: white;
   }
 
   main {
