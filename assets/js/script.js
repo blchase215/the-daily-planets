@@ -186,15 +186,19 @@ var dateInput = $("#date-input");
 
 var runAPIs = function(event) {
     event.preventDefault();
-
+    //sean key: 2mtrY9KLEh3TbTNFIlLfNrY7ETzWC2mGtB2cFz3S
+    //brian key: 7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3i
     //the date parameter for both ajax requests
     userDate = dateInput.val();
-    var newsApiKey = '7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3ih';
+    var camera = "fhaz";
+    var rhaz = "rhaz";
+    var navCam = "navcam"
+    var camera2 = "mast"
+    var newsApiKey = '2mtrY9KLEh3TbTNFIlLfNrY7ETzWC2mGtB2cFz3S';
     var newsQueryString = "https://api.thenewsapi.com/v1/news/top?api_token=" + newsApiKey + "&published_on="  + userDate + "&locale=us";
     var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
     var marsQueryString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key=' + marsApiKey;
-    var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate;
-
+    var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate + "&camera=" + camera + "&camera=" + rhaz + "&camera=" + navCam + "&camera=" + camera2;
    console.log(marsDateString);
     //using AJAX and jquery to make this less painful
     //mars API request
@@ -204,10 +208,23 @@ var runAPIs = function(event) {
       }).then(function (response) {
         console.log(response);
         //add element creation station here
-        var rover1 = $('<img src=' + response.photos[0].img_src + ' id="rover1"/>');
+        // var rover1 = $('<img src=' + response.photos[0].img_src + ' id="rover1"/>');
+        // var rover2 = $('<img src=' + response.photos[1].img_src + ' id="rover2"/>');
+        // var rover3 = $('<img src=' + response.photos[2].img_src + ' id="rover3"/>');
+        // var rover4 = $('<img src=' + response.photos[3].img_src + ' id="rover4"/>');
         console.log(response.photos[0].img_src);
-        console.log(rover1);
-        image1El.html(rover1);
+        image1El.html('');
+        image2El.html('');
+        image3El.html('');
+        image4El.html('');
+         if (response.photos[0].img_src){image1El.html($('<img src=' + response.photos[0].img_src + ' id="rover1"/>'));
+        };
+         if (response.photos[1].img_src){image2El.html($('<img src=' + response.photos[1].img_src + ' id="rover2"/>'));
+        };
+         if (response.photos[2].img_src){image3El.html($('<img src=' + response.photos[2].img_src + ' id="rover3"/>'));
+        };
+         if (response.photos[3].img_src){image4El.html($('<img src=' + response.photos[3].img_src + ' id="rover4"/>'));
+        };
         // $('#rover1').attr('src', response.photos[0].img_src)
         // var rover2 = $('<img id="rover2"/>')
         //add rover2.atr('src', response.the imageurl path)
