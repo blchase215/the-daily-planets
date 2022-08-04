@@ -12,9 +12,12 @@
     color: white;
     font-size: 24px;
   }
+  html {
+    background-color:#AE3D0D;
+  }
   /* Background color palette */
   body {
-    background-color:#AE3D0D;
+    min-height: 100vh;
   }
   /* header 1&2 font styles, colors, weight and size */
   h1 {
@@ -31,17 +34,27 @@
 
   #news a{
     font-size: 20px;
-    color: white;
-    text-decoration: 2px solid white;
-  }
-
-  #news a:hover{
+    color: lightblue;
     text-decoration: underline;
   }
 
-  
+  #news a:hover{
+    color: yellow;
+  }
   
   #rover1 {
+    height: 100%;
+    width: 500em;
+  }
+  #rover2 {
+    height: 100%;
+    width: 500em;
+  }
+  #rover3 {
+    height: 100%;
+    width: 500em;
+  }
+  #rover4 {
     height: 100%;
     width: 500em;
   }
@@ -74,6 +87,12 @@
     box-shadow:
     insert- 0 0 .5em var(--clr-button),
           0 0 .5em var(--clr-button);
+  }
+  
+  .cst-btn {
+    background-color: black;
+    font-weight: bold;
+    color: white;
   }
 
   /* .button::before{
