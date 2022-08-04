@@ -231,6 +231,11 @@ var runAPIs = function(event) {
     });
       $(".bottom").removeClass("is-hidden")
       $(".top").addClass("is-one-quarter-desktop")
+      if ($(window). width() < 700) {
+        $('#dropdown-disclaimer').addClass("is-hidden")
+      } else{
+        $('#dropdown-disclaimer').removeClass("is-hidden")
+      };
 };  
 
 
@@ -272,56 +277,12 @@ userForm.on('submit', runAPIs);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $( document ).ready(function() {
     dateInput.datepicker({ 
-        dateFormat: 'yy-mm-dd'
+        dateFormat: 'yy-mm-dd',
+        minDate: new Date(2012,07,06),
+        maxDate: "Today",
+        changeYear: true,
     });
     // dateInput.on("change", function () {
     //     var fromdate = $(this).val();
