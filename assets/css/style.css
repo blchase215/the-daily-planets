@@ -35,15 +35,27 @@
 
   #news a{
     font-size: 20px;
-    color: white;
-    text-decoration: 2px solid white;
+    color: lightblue;
+    text-decoration: underline;
   }
 
   #news a:hover{
-    text-decoration: underline;
+    color: yellow;
   }
   
-  #rover1 #rover2 #rover3 #rover4{
+  #rover1 {
+    height: 100%;
+    width: 500em;
+  }
+  #rover2 {
+    height: 100%;
+    width: 500em;
+  }
+  #rover3 {
+    height: 100%;
+    width: 500em;
+  }
+  #rover4 {
     height: 100%;
     width: 500em;
   }
