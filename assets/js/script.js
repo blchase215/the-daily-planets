@@ -1,10 +1,10 @@
 // eric start
 //global DOM variables
-var searchCardEl = $('<class = search-card/>')
-var searchHeadEl = $('<class = search-head/>')
-var inputCardEl = $('<class = input-card/>')
-var bottomEl = $('<class = bottom/>')
-var resultsEl = $('<class = results/>')
+var searchCardEl = $('<class = search-card/>');
+var searchHeadEl = $('<class = search-head/>');
+var inputCardEl = $('<class = input-card/>');
+var bottomEl = $('<class = bottom/>');
+var resultsEl = $('<class = results/>');
 var imagesEl = $('#images');
 var image1El = $('#image1');
 var image2El = $('#image2');
@@ -30,6 +30,7 @@ var runAPIs = function(event) {
     //brian key: 7in8TwtqzrrthvlHglN5nTxws1VNhYaztWPyp3i
     // Chase key newsapi.org: 77ded382149945d0aabeabaa30a76f24 
     // Chase key TheNewApi: XK5702MK41VUJtmCMj8Qbs77KCyEaR4BWAoGYZd3
+    // Eric key: wOeJU9w0Mf8etjxDU6zhHSSC6XvYZbhbUEdy1gog
     //the date parameter for both ajax requests
     userDate = dateInput.val();
     //defining parameters for mars cameras
@@ -41,10 +42,9 @@ var runAPIs = function(event) {
     var newsApiKey = 'XK5702MK41VUJtmCMj8Qbs77KCyEaR4BWAoGYZd3';
     //define parameters for news api
     var newsQueryString = "https://api.thenewsapi.com/v1/news/top?api_token=" + newsApiKey + "&published_on="  + userDate + "&locale=us";
-    var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
+    var marsApiKey = 'wOeJU9w0Mf8etjxDU6zhHSSC6XvYZbhbUEdy1gog';
     //define parameters for mars api
     var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate + "&camera=" + camera + "&camera=" + rhaz + "&camera=" + navCam + "&camera=" + camera2;
-   console.log(marsDateString);
     //using AJAX and jquery to make this less painful
     //autofill date search bar with last input before refresh, do this by updating local storage with whatever the last search was
     localStorage.setItem('lastDate', userDate);
@@ -74,7 +74,7 @@ var runAPIs = function(event) {
        url: newsQueryString,
        method: 'GET',
     }).then(function (response) {
-    console.log(response);
+      console.log(response);
     //if there is no response, send a message instead. Stop trying to run this program.
     if(response.data.length === 0){
       newsEl.append('<h3> No data for that date was found! Dates before January 1st 2021 currently will not fetch terrestrial news! </h3>')
@@ -86,7 +86,6 @@ var runAPIs = function(event) {
     //add the headline image under the link
     var headerImage = $('<img src=' + response.data[0].image_url + ' id="headerImage"/>');
     if(headerImage) {
-      console.log(response.data[0].image_url)
       newsEl.append(headerImage)
     }
     else{
@@ -121,11 +120,5 @@ $( document ).ready(function() {
     if (localStorage.getItem('lastDate')) {
       dateInput.val(localStorage.getItem('lastDate'));
       console.log(localStorage.getItem('lastDate'));
-     } else {console.log('no good!')};
-
-
-    // dateInput.on("change", function () {
-    //     var fromdate = $(this).val();
-    //     alert(fromdate);
-    // });
+     } else {console.log('No stored date!')};
 }); 
