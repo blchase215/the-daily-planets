@@ -42,7 +42,7 @@ var runAPIs = function(event) {
     var newsApiKey = 'XK5702MK41VUJtmCMj8Qbs77KCyEaR4BWAoGYZd3';
     //define parameters for news api
     var newsQueryString = "https://api.thenewsapi.com/v1/news/top?api_token=" + newsApiKey + "&published_on="  + userDate + "&locale=us";
-    var marsApiKey = 'psz2c1wYY3t9M2AONzlvkrwmbzmet6Gyv2NrfVQX';
+    var marsApiKey = 'wOeJU9w0Mf8etjxDU6zhHSSC6XvYZbhbUEdy1gog';
     //define parameters for mars api
     var marsDateString = 'https://mars-photos.herokuapp.com/api/v1/rovers/curiosity/photos?api_key='+ marsApiKey + '&earth_date=' + userDate + "&camera=" + camera + "&camera=" + rhaz + "&camera=" + navCam + "&camera=" + camera2;
     //using AJAX and jquery to make this less painful
